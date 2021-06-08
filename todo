@@ -1,0 +1,7 @@
+TODO
+
+- get detailed info
+- default values if props not present
+- periodic refresh
+- refresh individual locations
+- save data in localStorage

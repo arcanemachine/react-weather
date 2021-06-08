@@ -1,13 +1,270 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  overflow-y: auto; /* bulma compatibility */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #9af;
+}
+
+::placeholder {  /* make text-input placeholders easier to read */
+  opacity: 1;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+#page-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* COMPONENTS */
+.n-box {
+  background-color: #eee;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+
+.n-box-gray-lighter {
+  background-color: #ddd;
+  border-color: #ccc;
+}
+
+.n-box-gray-light {
+  background-color: #ccc;
+  border-color: #bbb;
+}
+
+/* BULMA */
+p {
+  margin-top: 1.5rem;
+}
+
+.button.is-light {
+  background-color: #ddd;
+}
+
+.button.is-light:hover {
+  background-color: #d4d4d4;
+}
+
+.is-bold {
+  font-weight: bold;
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.modal-content {
+  max-height: 90vh;
+  max-width: 85vw;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-menu-main.is-hidden-touch {
+  padding-top: 0;
+}
+
+.navbar-menu-main.is-hidden-desktop {
+  position: absolute;
+  width: 100vw;
+  min-height: 3.5rem;
+}
+
+.section {
+  padding: 2rem 1.5rem;
+}
+
+
+/* UTILITY */
+.border-radius-0\.5rem {
+  border-radius: 0.5rem;
+}
+
+.btn-group-left-side {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.btn-group-center {
+  border-radius: 0;
+}
+
+.btn-group-right-side {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
+.list-unstyled {
+  list-style-type: none;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.outline-none {
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-strikethrough {
+  text-decoration: line-through;
+}
+
+.trans-color-1000 {
+  transition: color 1s;
+}
+
+.trans-opacity-500 {
+  transition: opacity 0.5s;
+}
+
+.trans-opacity-1000 {
+  transition: opacity 1s;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-5rem {
+  width: 5rem;
+}
+
+.w-10rem {
+  width: 10rem;
+}
+
+.w-15rem {
+  width: 15rem;
+}
+
+.w-20rem {
+  width: 20rem;
+}
+
+.w-25rem {
+  width: 25rem;
+}
+
+.w-30rem {
+  width: 30rem;
+}
+
+.w-35rem {
+  width: 35rem;
+}
+
+.w-40rem {
+  width: 40rem;
+}
+
+.w-45rem {
+  width: 45rem;
+}
+
+.w-50rem {
+  width: 50rem;
+}
+
+.w-min-20rem {
+  min-width: 20rem;
+}
+
+.w-min-25rem {
+  min-width: 25rem;
+}
+
+.w-min-30rem {
+  min-width: 30rem;
+}
+
+.w-min-35rem {
+  min-width: 35rem;
+}
+
+.w-min-40rem {
+  min-width: 40rem;
+}
+
+.w-min-40vw {
+  min-width: 40vw;
+}
+
+.w-min-50vw {
+  min-width: 50vw;
+}
+
+.w-max-20rem {
+  max-width: 20rem;
+}
+
+.w-max-25rem {
+  max-width: 25rem;
+}
+
+.w-max-30rem {
+  max-width: 30rem;
+}
+
+.w-max-35rem {
+  max-width: 35rem;
+}
+
+.w-max-40rem {
+  max-width: 40rem;
+}
+
+.w-max-40vw {
+  max-width: 40vw;
+}
+
+.w-max-50vw {
+  max-width: 50vw;
+}
+
+.w-max-80vw {
+  max-width: 80vw;
+}
+
+.w-max-90vw {
+  max-width: 90vw;
+}
+
+.w-max-content {
+  max-width: max-content;
+}
+
+.word-break-break-word {
+  word-break: break-word;
 }
