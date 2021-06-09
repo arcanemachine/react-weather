@@ -1,6 +1,6 @@
 import City from './City.js';
 
-export default function Cities(props) {
+export default function CityList(props) {
   const cities = props.cities.length ? (
     props.cities.map((city) => {
       return (
