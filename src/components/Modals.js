@@ -22,12 +22,12 @@ export default function Modal(props) {
             </div>
 
             <div className="mt-4 is-flex is-justify-content-space-between">
-              <button onClick={props.handleConfirm}
+              <button onClick={props.onConfirm}
                  className="button is-block is-info is-medium">
                 Confirm
               </button>
               <button
-                onClick={props.emitCancel}
+                onClick={props.onCancel}
                 className="ml-4 button is-block is-light is-medium">
                   Cancel
               </button>
@@ -35,7 +35,7 @@ export default function Modal(props) {
 
           </div>
         </div>
-        <button onClick={props.handleCancel}
+        <button onClick={props.onCancel}
                 className="modal-close is-large"
                 aria-label="close"></button>
       </div>
@@ -48,7 +48,7 @@ export function CityRemoveModal(props) {
     <Modal show={props.show}
            title={`Remove city '${props.name}'?`}
            text={`Do you want to remove '${props.name}' from the list?`}
-           handleConfirm={props.handleConfirm}
-           handleCancel={props.handleCancel} />
+           onConfirm={props.onConfirm}
+           onCancel={props.onCancel} />
   )
 }
