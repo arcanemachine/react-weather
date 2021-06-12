@@ -9,11 +9,12 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cities: [],
+      cities: []
     };
   }
 
   componentDidMount() {
+    // pull data from localStorage
     if(localStorage.getItem('cities')) {
       this.setState({
         cities: JSON.parse(localStorage.getItem('cities'))
@@ -71,9 +72,9 @@ export default class Home extends React.Component {
     // add the city to the list
     this.setState({
       cities: [...this.state.cities, {
-        name: `${fetchedCityData.name}, ${fetchedCityData.sys.country}`,
-        id: fetchedCityData.id
-      }]
+        id: fetchedCityData.id,
+        name: fetchedCityData.name,
+        data: fetchedCityData }]
     })
   }
 
@@ -84,15 +85,12 @@ export default class Home extends React.Component {
     this.setState({ cities });
   }
 
-  sayHello() {
-    console.log('hello!');
-  }
-
   render() {
+    console.log(this.state.cities);
     return (
       <div>
-        <CityAddForm emitCityAdd={(name) => this.cityAdd(name)} />
-        <CityList buildWeatherApiUrl={this.buildWeatherApiUrl}
+        <CityAddForm cityAdd={(name) => this.cityAdd(name)} />
+        <CityList buildWeatherApiUrl={() => this.buildWeatherApiUrl()}
                   cities={this.state.cities}
                   cityRemove={(city) => this.cityRemove(city)} />
       </div>

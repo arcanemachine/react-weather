@@ -12,7 +12,7 @@ export default class CityAddForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.emitCityAdd(this.state.name);
+    this.props.cityAdd(this.state.name);
     this.setState({ name: '' });
   }
 
