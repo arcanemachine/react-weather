@@ -1,5 +1,10 @@
 TODO
 
+- add redux
+  - store local data
+- add react-router
+  - add categories
+    - e.g. 'Frequently Visited', 'Places I Want to Go'
 - get detailed info
 - default values if props not present
 - periodic refresh
