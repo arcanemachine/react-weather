@@ -6,7 +6,7 @@ export default class City extends React.Component {
     super(props);
     this.state = {
       showDeleteModal: false,
-      iconUrl: undefined
+      iconUrl: undefined,
     };
   }
 
@@ -30,19 +30,21 @@ export default class City extends React.Component {
       <React.Fragment>
 
         <CityRemoveModal
-          show={this.state.showDeleteModal}
-          name={this.props.city.name}
-          onConfirm={() => this.props.cityRemove(this.props.city)}
-          onCancel={() => this.setState({ showDeleteModal: false })} />
+            show={this.state.showDeleteModal}
+            name={this.props.city.name}
+            onConfirm={() => this.props.cityRemove(this.props.city)}
+            onCancel={() => this.setState({ showDeleteModal: false })} />
 
-          <li className="my-2 pt-5 box has-background-grey-lighter
+          <li className="my-2 pt-5 box has-background-grey-lightest
                          is-flex is-justify-content-space-between
                          is-align-content-center">
 
             <div>
               <img className="h-2rem w-2rem"
                    src={this.state.iconUrl}
-                   alt={`${this.props.city.name} weather icon`} />
+                   alt={`${this.props.city.name} weather - ` +
+                        `${this.props.city.data.weather[0].description}`}
+                   title={`${this.props.city.data.weather[0].description}`} />
             </div>
 
             <div className="mt-1 cursor-pointer">
