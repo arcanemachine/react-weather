@@ -47,7 +47,7 @@ export default class City extends React.Component {
                    title={`${this.props.city.data.weather[0].description}`} />
             </div>
 
-            <div className="mt-1 cursor-pointer">
+            <div className="mt-1">
               {this.props.city.name}, {this.props.city.data.sys.country}
             </div>
 
