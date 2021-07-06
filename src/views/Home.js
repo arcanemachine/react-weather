@@ -2,8 +2,7 @@ import React from 'react';
 import CityAddForm from '../components/CityAddForm.js';
 import CityList from '../components/CityList.js';
 
-import { WEATHER_API_KEY } from '../keys.js';
-
+import { REACT_APP_WEATHER_API_KEY } from '../keys.js';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -27,10 +26,10 @@ export default class Home extends React.Component {
   }
 
   buildWeatherApiUrl(name) {
-    const api_key = WEATHER_API_KEY;
+    const apiKey = REACT_APP_WEATHER_API_KEY;
     const units = 'metric';
-    const weather_api_url = 'https://api.openweathermap.org/data/2.5/weather';
-    const url = `${weather_api_url}?q=${name}&appid=${api_key}&units=${units}`;
+    const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+    const url = `${weatherApiUrl}?q=${name}&appid=${apiKey}&units=${units}`;
     return url;
   }
 
@@ -86,7 +85,6 @@ export default class Home extends React.Component {
   }
 
   render() {
-    console.log(this.state.cities);
     return (
       <div>
         <CityAddForm cityAdd={(name) => this.cityAdd(name)} />
