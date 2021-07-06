@@ -20,14 +20,20 @@ export default class CityAddForm extends React.Component {
     return (
       <form className="mt-4 mx-auto is-flex is-justify-content-center"
             onSubmit={(e) => this.handleSubmit(e)}>
-        <input type="text"
-               className="input is-inline is-medium btn-group-left-side"
-               value={this.state.name}
-               onChange={(e) => this.handleChange(e)}
-               placeholder="Add new location..." />
-        <input type="submit"
-               className="button is-success is-medium btn-group-right-side"
-               value="Create" />
+        <div className="field has-addons">
+          <span className="control">
+            <input type="text"
+                   className="input is-inline is-medium"
+                   value={this.state.name}
+                   onChange={(e) => this.handleChange(e)}
+                   placeholder="Add new location..." />
+          </span>
+          <span className="control">
+            <input type="submit"
+                   className="button is-success is-medium"
+                   value="Create" />
+          </span>
+        </div>
       </form>
     );
   }
