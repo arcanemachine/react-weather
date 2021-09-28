@@ -85,6 +85,10 @@ p {
   width: 100%;
 }
 
+.is-vertical-align-middle {
+  vertical-align: middle;
+}
+
 .modal-content {
   max-height: 90vh;
   max-width: 85vw;
@@ -343,6 +347,10 @@ p {
 
 .w-max-50vw {
   max-width: 50vw;
+}
+
+.w-max-70vw {
+  max-width: 70vw;
 }
 
 .w-max-80vw {

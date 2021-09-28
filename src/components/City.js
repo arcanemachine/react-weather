@@ -1,5 +1,5 @@
-import React from 'react';
-import { CityRemoveModal } from './Modals.js';
+import React from "react";
+import { CityRemoveModal } from "./Modals.js";
 
 export default class City extends React.Component {
   constructor(props) {
@@ -12,9 +12,9 @@ export default class City extends React.Component {
 
   componentDidMount() {
     const iconCode = this.props.city.data.weather[0].icon;
-    this.setState({ 
-      iconUrl: `https://openweathermap.org/img/wn/${iconCode}.png`
-    })
+    this.setState({
+      iconUrl: `https://openweathermap.org/img/wn/${iconCode}.png`,
+    });
   }
 
   cityRemoveModalEnable() {
@@ -28,40 +28,48 @@ export default class City extends React.Component {
   render() {
     return (
       <React.Fragment>
-
         <CityRemoveModal
-            show={this.state.showDeleteModal}
-            name={this.props.city.name}
-            onConfirm={() => this.props.cityRemove(this.props.city)}
-            onCancel={() => this.setState({ showDeleteModal: false })} />
+          show={this.state.showDeleteModal}
+          name={this.props.city.name}
+          onConfirm={() => this.props.cityRemove(this.props.city)}
+          onCancel={() => this.setState({ showDeleteModal: false })}
+        />
 
-          <li className="my-2 pt-5 box has-background-grey-lightest
+        <li
+          className="my-2 pt-5 box has-background-grey-lighter
                          is-flex is-justify-content-space-between
-                         is-align-content-center">
+                         is-align-content-center"
+        >
+          <div className="h-4rem w-2rem">
+            <img
+              className="w-2rem"
+              src={this.state.iconUrl}
+              alt={`${this.props.city.name} weather icon`}
+            />
+            <br />
+            {Math.round(this.props.city.data.main.temp)}&#176;C
+          </div>
+          <div></div>
 
+          <div className="mx-auto">
             <div>
-              <img className="h-2rem w-2rem"
-                   src={this.state.iconUrl}
-                   alt={`${this.props.city.name} weather - ` +
-                        `${this.props.city.data.weather[0].description}`}
-                   title={`${this.props.city.data.weather[0].description}`} />
-            </div>
-
-            <div className="mt-1">
               {this.props.city.name}, {this.props.city.data.sys.country}
             </div>
-
-            <div>
-              <span className="p-2 is-size-5 cursor-pointer"
-                    onClick={() => this.cityRemoveModalEnable()}>
-                &times;
-              </span>
+            <div className="mt-2 is-italic">
+              {this.props.city.data.weather[0].description}
             </div>
+          </div>
 
-          </li>
-
+          <div className="is-flex is-align-items-center">
+            <span
+              className="p-2 pb-3 is-size-5 cursor-pointer"
+              onClick={() => this.cityRemoveModalEnable()}
+            >
+              &times;
+            </span>
+          </div>
+        </li>
       </React.Fragment>
     );
   }
 }
-
