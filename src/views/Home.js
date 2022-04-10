@@ -29,7 +29,7 @@ export default class Home extends React.Component {
     const apiKey = REACT_APP_WEATHER_API_KEY;
     const units = 'metric';
     const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';
-    const url = `${weatherApiUrl}?q=${name}&appid=${apiKey}&units=${units}`;
+    const url = `${weatherApiUrl}?q=${name}&appid=${atob(apiKey)}&units=${units}`;
     return url;
   }
 
