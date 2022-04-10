@@ -1,5 +1,6 @@
 TODO
 
+- update stale data
 - add redux
   - store local data
 - add react-router
